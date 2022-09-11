@@ -1,6 +1,7 @@
 import random
 from micrograd.engine import Value
 import os
+import datetime
 
 class Module:
 
@@ -59,7 +60,7 @@ class MLP(Module):
     def parameters(self):
         return [p for layer in self.layers for p in layer.parameters()]
 
-    def saveParams(self, path:str):
+    def saveParams(self,path:str):
         if not os.path.isfile(path):
             time = datetime.datetime.now().timestamp()
             os.path.join(path,f"weights_{time}")

@@ -1,1 +1,4 @@
 .ipynb_checkpoints/
+weights.txt
+approx_sin_weights.txt
+gout.svg

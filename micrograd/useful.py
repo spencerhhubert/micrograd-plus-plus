@@ -1,13 +1,12 @@
 import random
 import os
-import datetime
 import micrograd.nn as nn
 import micrograd.engine as engine
 
-def randomList(l):
+def randomList(l,lb,ub):
     out = []
     for i in range(l):
-        out.append(random.uniform(-1,1))
+        out.append(random.uniform(lb,ub))
     return out
 
 def sub(A:list,B:list):
