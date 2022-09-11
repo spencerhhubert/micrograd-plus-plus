@@ -1,5 +1,6 @@
 import random
 from micrograd.engine import Value
+import os
 
 class Module:
 
@@ -45,6 +46,8 @@ class Layer(Module):
 class MLP(Module):
 
     def __init__(self, nin, nouts):
+        self.nin = nin
+        self.nouts = nouts
         sz = [nin] + nouts
         self.layers = [Layer(sz[i], sz[i+1], nonlin=i!=len(nouts)-1) for i in range(len(nouts))]
 
@@ -55,6 +58,28 @@ class MLP(Module):
 
     def parameters(self):
         return [p for layer in self.layers for p in layer.parameters()]
+
+    def saveParams(self, path:str):
+        if not os.path.isfile(path):
+            time = datetime.datetime.now().timestamp()
+            os.path.join(path,f"weights_{time}")
+        with open(path,'w') as file:
+            out = f"architecture: {[self.nin]+self.nouts}\n"
+            for l in self.layers:
+                for n in l.neurons:
+                    for w in n.w:
+                        out += f"{w.data}\n"
+                    out += f"{n.b.data}\n"
+            file.write(out)
+
+    def loadParams(self,path:str):
+        with open(path,'r') as file:
+            arch = file.readline()
+            for l in self.layers:
+                for n in l.neurons:
+                    for w in n.w:
+                        w.data = float(file.readline())
+                    n.b.data = float(file.readline())
 
     def __repr__(self):
         return f"MLP of [{', '.join(str(layer) for layer in self.layers)}]"

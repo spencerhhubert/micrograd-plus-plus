@@ -1,4 +1,8 @@
 import random
+import os
+import datetime
+import micrograd.nn as nn
+import micrograd.engine as engine
 
 def randomList(l):
     out = []
@@ -20,3 +24,5 @@ def dot(A:list,B:list):
 
 def mean(A:list):
     return sum(A)/len(A)
+
+
