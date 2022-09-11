@@ -1,3 +1,19 @@
+Metadata-Version: 2.1
+Name: micrograd-plus-plus
+Version: 0.1.0
+Summary: A tiny scalar-valued autograd engine with a small PyTorch-like neural network library on top.
+Home-page: https://github.com/karpathy/micrograd
+Author: Andrej Karpathy
+Author-email: andrej.karpathy@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 
 # micrograd
 
@@ -67,3 +83,5 @@ python -m pytest
 ### License
 
 MIT
+
+

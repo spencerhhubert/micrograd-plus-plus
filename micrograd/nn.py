@@ -19,7 +19,7 @@ class Neuron(Module):
 
     def __call__(self, x):
         act = sum((wi*xi for wi,xi in zip(self.w, x)), self.b)
-        return act.relu() if self.nonlin else act
+        return act.tanh() if self.nonlin else act
 
     def parameters(self):
         return self.w + [self.b]
@@ -58,3 +58,15 @@ class MLP(Module):
 
     def __repr__(self):
         return f"MLP of [{', '.join(str(layer) for layer in self.layers)}]"
+
+#optimizers
+class SGD():
+    def __init__(self, model, lr):
+        self.model = model
+        self.lr = lr
+
+    def stepGrads(self):
+        for param in self.model.parameters():
+            param.data -= self.lr * param.grad
+
+

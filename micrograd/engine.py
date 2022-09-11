@@ -1,3 +1,4 @@
+import math
 
 class Value:
     """ stores a single scalar value and its gradient """
@@ -28,6 +29,12 @@ class Value:
         def _backward():
             self.grad += other.data * out.grad
             other.grad += self.data * out.grad
+            # print(other.data * out.grad)
+            # print(f"out.grad: {out.grad}")
+            # print(f"self.data: {self.data}")
+            # print(f"self.grad: {self.grad}")
+            # print(f"other.grad: {other.grad}")
+            # print(f"other.data: {other.data}")
         out._backward = _backward
 
         return out
@@ -47,6 +54,15 @@ class Value:
 
         def _backward():
             self.grad += (out.data > 0) * out.grad
+        out._backward = _backward
+
+        return out
+
+    def tanh(self):
+        out = Value(math.tanh(self.data), (self,), 'tanh')
+
+        def _backward():
+            self.grad += (1-(math.tanh(self.data)**2)) * out.grad
         out._backward = _backward
 
         return out

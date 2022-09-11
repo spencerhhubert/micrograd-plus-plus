@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+micrograd/__init__.py
+micrograd/engine.py
+micrograd/nn.py
+micrograd_plus_plus.egg-info/PKG-INFO
+micrograd_plus_plus.egg-info/SOURCES.txt
+micrograd_plus_plus.egg-info/dependency_links.txt
+micrograd_plus_plus.egg-info/top_level.txt
+test/test_engine.py

@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="micrograd",
+    name="micrograd-plus-plus",
     version="0.1.0",
     author="Andrej Karpathy",
     author_email="andrej.karpathy@gmail.com",
