@@ -12,7 +12,7 @@ nn = MLP(1,[32,128,32,1])
 optim = SGD(nn,1)
 optim.lr = 0.001
 iterations = 1000
-#nn.loadParams("approx_sin_weights.txt")
+nn.loadParams("approx_sin_weights.txt")
 
 for i in range(iterations):
     inputs = randomList(50,-1,9)
