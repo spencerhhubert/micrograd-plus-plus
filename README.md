@@ -1,5 +1,6 @@
 # micrograd++
 <p>andrej karpathy's <a href"https://github.com/karpathy/micrograd">micrograd</a> with a few new functions. I added almost nothing, this isn't my work</p>
+<p>I just think it's a great learning resource that's real fun to play with. these are my creature comfort upgrades to the repo</p>
 <ul>
 <li>save and load network parameters with <code>MLP.saveParams()</code> and <code>MLP.loadParams()</code></li>
 <li>optmize with <code>SGD()</code></li>
