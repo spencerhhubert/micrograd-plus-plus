@@ -23,6 +23,7 @@ for i in range(iterations):
     #print(targets)
     diff = sub(outs,targets)
     loss = dot(diff,diff)/len(outs)
+    nn.zero_grad()
     loss.backward()
     print(f"loss: {loss.data}")
     print(f"learning rate: {optim.lr}")
@@ -30,8 +31,6 @@ for i in range(iterations):
     if i % 100 == 0:
         optim.lr = optim.lr - 0.1
         optim.lr = 0.001
-    if i != (iterations-1):
-        nn.zero_grad()
 
 nn.saveParams("approx_sin_weights.txt")
 

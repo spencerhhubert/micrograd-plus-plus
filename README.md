@@ -1,8 +1,8 @@
-#micrograd++
-andrej karpathy's micrograd with a few new functions
+# micrograd++
+andrej karpathy's <a href"https://github.com/karpathy/micrograd">micrograd</a> with a few new functions. I added almost nothing, this isn't my work
 <ul>
-<li>save and load network parameters with `MLP.saveParams()` and `MLP.loadParams()`</li>
-<li>optmize with `SGD()`</li>
-<li>idk there's some other stuff, more to come</li>
-<ul>
+<li>save and load network parameters with <code>MLP.saveParams()</code> and <code>MLP.loadParams()</code></li>
+<li>optmize with <code>SGD()</code></li>
+<li>I put the code to construct the graph in <code>micrograd/graph.py</code>. You can call <code>dot = draw_dot(y)</code> where <code>y</code> is the output of your network and then, in your jupyter notebook, call <code>dot</code> to get a computational graph of your network</li>
+</ul>
 
