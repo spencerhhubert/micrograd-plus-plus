@@ -5,3 +5,4 @@ gout.svg
 micrograd_plus_plus.egg-info/
 mnist/data/
 mnist/__pycache__/
+*.swp
