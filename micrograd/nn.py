@@ -61,9 +61,10 @@ class MLP(Module):
         return [p for layer in self.layers for p in layer.parameters()]
 
     def saveParams(self,path:str):
-        if not os.path.isfile(path):
+        if not os.path.isfile(path) or path == "":
             time = datetime.datetime.now().timestamp()
-            os.path.join(path,f"weights_{time}")
+            path = os.path.join(path,f"weights_{time}.txt")
+        print(path)
         with open(path,'w') as file:
             out = f"architecture: {[self.nin]+self.nouts}\n"
             for l in self.layers:
