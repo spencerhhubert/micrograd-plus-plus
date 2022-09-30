@@ -9,7 +9,7 @@ mndata = MNIST("data")
 mndata.gz = True
 images, labels = mndata.load_training()
 
-nn = MLP(784,[800,10])
+nn = MLP(784,[128,10])
 optim = SGD(nn, 0.01)
 batch_size = 100
 

@@ -22,6 +22,12 @@ def dot(A:list,B:list):
     return sum(out)
 
 def mean(A:list):
-    return sum(A)/len(A)
+    return sum1(A)/len(A)
+
+def sum1(A:list):
+    out = 0
+    for x in A:
+        out += x
+    return x
 
 
