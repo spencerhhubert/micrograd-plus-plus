@@ -16,7 +16,7 @@ images, labels = list(images), list(labels)
 
 nn = MLP(784,[16,16,10])
 optim = SGD(nn, 0.1)
-batch_size = 256
+batch_size = 128
 
 #nn.loadParams("weights/weights_1664544949.74629.txt")
 
